@@ -12,6 +12,17 @@ class Aritmetica:
         
         print(f"Resultado final: {total}")
 
+    #Fernando Alan Peralta Andia
+    def resta(self):
+        total = float(input("Ingrese el primer número: "))
+        
+       
+        numero = input("Ingrese otro número para restar: ")      
+        total -= float(numero)
+        print(f"Resta Total: {total}")
+        
+        print(f"Resultado final: {total}")
+
     
     
     
@@ -45,6 +56,8 @@ def menu():
         
         if opcion == "1":
             aritmetica.suma()
+        elif opcion == "2":
+            aritmetica.resta()
         elif opcion == "5":
             print("---------Exponenciación---------")
             base = float(input("Ingrese el número de la base: "))
