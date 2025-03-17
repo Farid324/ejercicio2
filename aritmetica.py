@@ -84,6 +84,24 @@ class Aritmetica:
             print(f"Raíz actual: {total}")
         
         print(f"Resultado final: {total}")
+        
+    # Maite Suarez Arraya
+    def modulo(self):
+        while True:
+            try:
+                dividendo = float(input("Ingrese el primer número: "))
+                divisor = float(input("Ingrese el segundo número: "))
+                
+                if divisor == 0:
+                    print("Error: No se puede calcular el módulo con divisor cero. Intente de nuevo.")
+                    continue
+                
+                resultado = dividendo % divisor
+                print(f"Resultado del módulo: {resultado}")
+                break
+                
+            except ValueError:
+                print("Error: Ingrese valores numéricos válidos.")
 
 def menu():
     aritmetica = Aritmetica()
@@ -96,9 +114,10 @@ def menu():
         print("4. División")
         print("5. Exponenciación")
         print("6. Radicación")
-        print("7. Salir")
+        print("7. Módulo")
+        print("8. Salir")
         
-        opcion = input("Seleccione una operación (1-7): ")
+        opcion = input("Seleccione una operación (1-8): ")
         
         if opcion == "1":
             aritmetica.suma()
@@ -118,6 +137,9 @@ def menu():
             print("---------Radicación---------")
             aritmetica.radicacion()
         elif opcion == "7":
+            print("---------Módulo---------")
+            aritmetica.modulo()
+        elif opcion == "8":
             print("Saliendo del programa...")
             break
         else:
@@ -125,3 +147,4 @@ def menu():
 
 if __name__ == "__main__":
     menu()
+
