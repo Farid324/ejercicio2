@@ -66,6 +66,24 @@ class Aritmetica:
                 
             except ValueError:
                 print("Error: Ingrese valores numéricos válidos.")
+    
+
+    # Carla VIllarroel Mendieta
+    def radicacion(self):
+        total = float(input("Ingrese el número base (radicando): "))
+        
+        indice = float(input("Ingrese el índice de la raíz: "))  
+        total **= (1 / indice)
+        print(f"Raíz actual: {total}")
+        
+        while True:
+            indice = input("Ingrese otro índice de raíz o presione Enter para terminar: ")
+            if indice == "":
+                break
+            total **= (1 / float(indice))
+            print(f"Raíz actual: {total}")
+        
+        print(f"Resultado final: {total}")
 
 def menu():
     aritmetica = Aritmetica()
@@ -77,9 +95,10 @@ def menu():
         print("3. Multiplicación")
         print("4. División")
         print("5. Exponenciación")
-        print("6. Salir")
+        print("6. Radicación")
+        print("7. Salir")
         
-        opcion = input("Seleccione una operación (1-6): ")
+        opcion = input("Seleccione una operación (1-7): ")
         
         if opcion == "1":
             aritmetica.suma()
@@ -96,6 +115,9 @@ def menu():
             resultado = aritmetica.exponenciacion(base, exponente)
             print(f"Resultado: {resultado}")
         elif opcion == "6":
+            print("---------Radicación---------")
+            aritmetica.radicacion()
+        elif opcion == "7":
             print("Saliendo del programa...")
             break
         else:
