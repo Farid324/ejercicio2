@@ -36,6 +36,25 @@ class Aritmetica:
             exponente //=2
         return resultado
     
+
+    #Camila Wara Fernandez Sandoval
+    def multiplicacion(self):
+        total = float(input("Ingrese el primer número: "))
+        
+        numero = float(input("Ingrese otro número: "))  
+        total *= numero
+        print(f"Multiplicación actual: {total}")
+        
+        while True:
+            numero = input("Ingrese otro número o presione Enter para terminar: ")
+            if numero == "":
+                break
+            total *= float(numero)
+            print(f"Multiplicación actual: {total}")
+        
+        print(f"Resultado final: {total}")
+
+    
         
 
 
@@ -58,6 +77,8 @@ def menu():
             aritmetica.suma()
         elif opcion == "2":
             aritmetica.resta()
+        elif opcion == "3":
+            aritmetica.multiplicacion()
         elif opcion == "5":
             print("---------Exponenciación---------")
             base = float(input("Ingrese el número de la base: "))
