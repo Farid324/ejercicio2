@@ -1,5 +1,5 @@
 class Aritmetica:
-    #Farid Ramirez Arancibia
+    # Farid Ramirez Arancibia
     def suma(self):
         total = float(input("Ingrese el primer número: "))
         
@@ -12,21 +12,17 @@ class Aritmetica:
         
         print(f"Resultado final: {total}")
 
-    #Fernando Alan Peralta Andia
+    # Fernando Alan Peralta Andia
     def resta(self):
         total = float(input("Ingrese el primer número: "))
         
-       
         numero = input("Ingrese otro número para restar: ")      
         total -= float(numero)
         print(f"Resta Total: {total}")
         
         print(f"Resultado final: {total}")
 
-    
-    
-    
-    #Grissell Ingrid Coca Cadima
+    # Grissell Ingrid Coca Cadima
     def exponenciacion(self, base, exponente):
         resultado = 1
         while exponente > 0:
@@ -36,8 +32,7 @@ class Aritmetica:
             exponente //=2
         return resultado
     
-
-    #Camila Wara Fernandez Sandoval
+    # Camila Wara Fernandez Sandoval
     def multiplicacion(self):
         total = float(input("Ingrese el primer número: "))
         
@@ -54,10 +49,23 @@ class Aritmetica:
         
         print(f"Resultado final: {total}")
 
-    
-        
-
-
+    # Jhoswer Eddy Navia Guevara
+    def division(self):
+        while True:
+            try:
+                dividendo = float(input("Ingrese el dividendo: "))
+                divisor = float(input("Ingrese el divisor: "))
+                
+                if divisor == 0:
+                    print("Error: No se puede dividir por cero. Intente de nuevo.")
+                    continue
+                
+                resultado = dividendo / divisor
+                print(f"Resultado: {resultado}")
+                break
+                
+            except ValueError:
+                print("Error: Ingrese valores numéricos válidos.")
 
 def menu():
     aritmetica = Aritmetica()
@@ -79,6 +87,8 @@ def menu():
             aritmetica.resta()
         elif opcion == "3":
             aritmetica.multiplicacion()
+        elif opcion == "4":
+            aritmetica.division()
         elif opcion == "5":
             print("---------Exponenciación---------")
             base = float(input("Ingrese el número de la base: "))
