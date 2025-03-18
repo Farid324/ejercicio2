@@ -122,7 +122,24 @@ class Aritmetica:
 
         except ValueError:
             print("Error: Ingrese valores numéricos válidos.")
+    #Melina Alcira Montaño Guzman
+    def raiz(self):
+        try:
+            numero = float(input("Ingresa un número para la base: "))
+            n = int(input("Ingresa un número positivo para la raíz: "))
 
+            if numero < 0 and n % 2 == 0:
+                raise ValueError("No se puede calcular la raíz par de un número negativo.")
+            if n <= 0:
+                raise ValueError("El índice de la raíz debe ser un número positivo mayor que 0.")
+
+            resultado = pow(numero, 1/n)
+            print(f"La raíz {n}-ésima de {numero} es: {resultado}")
+
+        except ValueError as e:
+            print(f"Error: {e}")
+        except TypeError:
+            print("Error: Ingresa valores numéricos válidos.")
 
 def menu():
     aritmetica = Aritmetica()
@@ -137,9 +154,10 @@ def menu():
         print("6. Radicación")
         print("7. Módulo")
         print("8. Logaritmo")
-        print("9. Salir")
+        print("9. Raiz")
+        print("10. Salir")
         
-        opcion = input("Seleccione una operación (1-9): ")
+        opcion = input("Seleccione una operación (1-10): ")
         
         if opcion == "1":
             aritmetica.suma()
@@ -165,6 +183,9 @@ def menu():
             print("---------Logaritmo---------")
             aritmetica.logaritmo()
         elif opcion == "9":
+            print("---------Raiz n-ésima---------")
+            aritmetica.raiz()
+        elif opcion == "10":
             print("Saliendo del programa...")
             break
         else:
