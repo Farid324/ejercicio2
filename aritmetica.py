@@ -1,3 +1,4 @@
+import math
 class Aritmetica:
     # Farid Ramirez Arancibia
     def suma(self):
@@ -103,6 +104,26 @@ class Aritmetica:
             except ValueError:
                 print("Error: Ingrese valores numéricos válidos.")
 
+    #Rodrigo Pierre Soliz Cespedes
+    def logaritmo(self):
+        try:
+            numero = float(input("Ingrese el número: "))
+            base = float(input("Ingrese la base: "))
+
+            if numero <= 0:
+                print("Error: El número debe ser mayor que 0")
+                return
+            if base <= 0 or base == 1:
+                print("Error: La base debe ser mayor que 0 y diferente de 1")
+                return
+        
+            resultado = math.log(numero, base)
+            print(f"El logaritmo de {numero} en base {base} es: {resultado}")
+
+        except ValueError:
+            print("Error: Ingrese valores numéricos válidos.")
+
+
 def menu():
     aritmetica = Aritmetica()
     
@@ -115,9 +136,10 @@ def menu():
         print("5. Exponenciación")
         print("6. Radicación")
         print("7. Módulo")
-        print("8. Salir")
+        print("8. Logaritmo")
+        print("9. Salir")
         
-        opcion = input("Seleccione una operación (1-8): ")
+        opcion = input("Seleccione una operación (1-9): ")
         
         if opcion == "1":
             aritmetica.suma()
@@ -140,6 +162,9 @@ def menu():
             print("---------Módulo---------")
             aritmetica.modulo()
         elif opcion == "8":
+            print("---------Logaritmo---------")
+            aritmetica.logaritmo()
+        elif opcion == "9":
             print("Saliendo del programa...")
             break
         else:
