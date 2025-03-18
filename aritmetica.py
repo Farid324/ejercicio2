@@ -1,5 +1,18 @@
 import math
 class Aritmetica:
+    # Farid Ramirez Arancibia
+    def suma(self):
+        total = float(input("Ingrese el primer número: "))
+        
+        while True:
+            numero = input("Ingrese otro número para sumar (o presione Enter para terminar): ")
+            if numero == "":
+                break
+            total += float(numero)
+            print(f"Suma actual: {total}")
+        
+        print(f"Resultado final: {total}")
+        
     # Fernando Alan Peralta Andia
     def resta(self):
         total = float(input("Ingrese el primer número: "))
