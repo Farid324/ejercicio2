@@ -35,21 +35,21 @@ class Aritmetica:
     
     #Camila Wara Fernandez Sandoval
     def multiplicacion(self):
-    total = float(input("Ingrese el primer número: "))
-    
-    numero = float(input("Ingrese otro número: "))  # Pide el segundo número
-    total *= numero
-    print(f"Multiplicación actual: {total}")
-    
-    while True:
-        numero = input("Ingrese otro número o presione Enter para terminar: ")
-        if numero == "":
-            break
-        total *= float(numero)
+        total = float(input("Ingrese el primer número: "))
+        
+        numero = float(input("Ingrese otro número: "))  
+        total *= numero
         print(f"Multiplicación actual: {total}")
-    
-    print(f"Resultado final: {total}")
-    
+        
+        while True:
+            numero = input("Ingrese otro número o presione Enter para terminar: ")
+            if numero == "":
+                break
+            total *= float(numero)
+            print(f"Multiplicación actual: {total}")
+        
+        print(f"Resultado final: {total}")
+
 
     # Jhoswer Eddy Navia Guevara
     def division(self):
