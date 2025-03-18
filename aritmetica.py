@@ -1,18 +1,5 @@
 import math
 class Aritmetica:
-    # Farid Ramirez Arancibia
-    def suma(self):
-        total = float(input("Ingrese el primer número: "))
-        
-        while True:
-            numero = input("Ingrese otro número para sumar (o presione Enter para terminar): ")
-            if numero == "":
-                break
-            total += float(numero)
-            print(f"Suma actual: {total}")
-        
-        print(f"Resultado final: {total}")
-
     # Fernando Alan Peralta Andia
     def resta(self):
         total = float(input("Ingrese el primer número: "))
@@ -32,23 +19,6 @@ class Aritmetica:
             base *= base 
             exponente //=2
         return resultado
-    
-    # Camila Wara Fernandez Sandoval
-    def multiplicacion(self):
-        total = float(input("Ingrese el primer número: "))
-        
-        numero = float(input("Ingrese otro número: "))  
-        total *= numero
-        print(f"Multiplicación actual: {total}")
-        
-        while True:
-            numero = input("Ingrese otro número o presione Enter para terminar: ")
-            if numero == "":
-                break
-            total *= float(numero)
-            print(f"Multiplicación actual: {total}")
-        
-        print(f"Resultado final: {total}")
 
     # Jhoswer Eddy Navia Guevara
     def division(self):
