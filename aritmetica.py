@@ -142,6 +142,147 @@ class Aritmetica:
             a, b = b, a + b
             print(fib_sequence)
 
+     # Brenda Calizaya
+    def fracciones(self):
+        print("\n=== Operaciones con Fracciones ===")
+        print("1. Suma de fracciones")
+        print("2. Resta de fracciones")
+        print("3. Multiplicación de fracciones")
+        print("4. División de fracciones")
+        print("5. Simplificar fracción")
+        print("6. Volver al menú principal")
+        
+        opcion = input("Seleccione una operación (1-6): ")
+        
+        if opcion == "1":
+            self.suma_fracciones()
+        elif opcion == "2":
+            self.resta_fracciones()
+        elif opcion == "3":
+            self.multiplicacion_fracciones()
+        elif opcion == "4":
+            self.division_fracciones()
+        elif opcion == "5":
+            self.simplificar_fraccion()
+        elif opcion == "6":
+            return
+        else:
+            print("Opción inválida. Intente de nuevo.")
+            self.fracciones()
+    
+    def suma_fracciones(self):
+        try:
+            print("\n--- Suma de Fracciones ---")
+            num1 = int(input("Ingrese el numerador de la primera fracción: "))
+            den1 = int(input("Ingrese el denominador de la primera fracción: "))
+            
+            num2 = int(input("Ingrese el numerador de la segunda fracción: "))
+            den2 = int(input("Ingrese el denominador de la segunda fracción: "))
+            
+            # Verificar denominadores no cero
+            if den1 == 0 or den2 == 0:
+                print("Error: El denominador no puede ser cero.")
+                return
+            
+            # Calcular suma: (a/b + c/d) = (a*d + b*c)/(b*d)
+            nuevo_num = (num1 * den2) + (num2 * den1)
+            nuevo_den = den1 * den2
+            
+            resultado = Fraccion(nuevo_num, nuevo_den)
+            print(f"Resultado: {resultado}")
+            
+        except ValueError as e:
+            print(f"Error: {e}")
+    
+    def resta_fracciones(self):
+        try:
+            print("\n--- Resta de Fracciones ---")
+            num1 = int(input("Ingrese el numerador de la primera fracción: "))
+            den1 = int(input("Ingrese el denominador de la primera fracción: "))
+            
+            num2 = int(input("Ingrese el numerador de la segunda fracción: "))
+            den2 = int(input("Ingrese el denominador de la segunda fracción: "))
+            
+            # Verificar denominadores no cero
+            if den1 == 0 or den2 == 0:
+                print("Error: El denominador no puede ser cero.")
+                return
+            
+            # Calcular resta: (a/b - c/d) = (a*d - b*c)/(b*d)
+            nuevo_num = (num1 * den2) - (num2 * den1)
+            nuevo_den = den1 * den2
+            
+            resultado = Fraccion(nuevo_num, nuevo_den)
+            print(f"Resultado: {resultado}")
+            
+        except ValueError as e:
+            print(f"Error: {e}")
+    
+    def multiplicacion_fracciones(self):
+        try:
+            print("\n--- Multiplicación de Fracciones ---")
+            num1 = int(input("Ingrese el numerador de la primera fracción: "))
+            den1 = int(input("Ingrese el denominador de la primera fracción: "))
+            
+            num2 = int(input("Ingrese el numerador de la segunda fracción: "))
+            den2 = int(input("Ingrese el denominador de la segunda fracción: "))
+            
+            # Verificar denominadores no cero
+            if den1 == 0 or den2 == 0:
+                print("Error: El denominador no puede ser cero.")
+                return
+            
+            # Calcular multiplicación: (a/b * c/d) = (a*c)/(b*d)
+            nuevo_num = num1 * num2
+            nuevo_den = den1 * den2
+            
+            resultado = Fraccion(nuevo_num, nuevo_den)
+            print(f"Resultado: {resultado}")
+            
+        except ValueError as e:
+            print(f"Error: {e}")
+    
+    def division_fracciones(self):
+        try:
+            print("\n--- División de Fracciones ---")
+            num1 = int(input("Ingrese el numerador de la primera fracción: "))
+            den1 = int(input("Ingrese el denominador de la primera fracción: "))
+            
+            num2 = int(input("Ingrese el numerador de la segunda fracción: "))
+            den2 = int(input("Ingrese el denominador de la segunda fracción: "))
+            
+            # Verificar denominadores y numerador de la segunda fracción no cero
+            if den1 == 0 or den2 == 0 or num2 == 0:
+                print("Error: El denominador no puede ser cero y el numerador de la segunda fracción tampoco puede ser cero para la división.")
+                return
+            
+            # Calcular división: (a/b / c/d) = (a*d)/(b*c)
+            nuevo_num = num1 * den2
+            nuevo_den = den1 * num2
+            
+            resultado = Fraccion(nuevo_num, nuevo_den)
+            print(f"Resultado: {resultado}")
+            
+        except ValueError as e:
+            print(f"Error: {e}")
+    
+    def simplificar_fraccion(self):
+        try:
+            print("\n--- Simplificar Fracción ---")
+            num = int(input("Ingrese el numerador de la fracción: "))
+            den = int(input("Ingrese el denominador de la fracción: "))
+            
+            # Verificar denominador no cero
+            if den == 0:
+                print("Error: El denominador no puede ser cero.")
+                return
+            
+            resultado = Fraccion(num, den)
+            print(f"Fracción simplificada: {resultado}")
+            
+        except ValueError as e:
+            print(f"Error: {e}")
+
 def menu():
     aritmetica = Aritmetica()
     
@@ -155,8 +296,8 @@ def menu():
         print("6. Radicación")
         print("7. Módulo")
         print("8. Logaritmo")
-        print("9. Fibonacci")
-        print("10. Salir")
+        print("10. Fracciones")
+        print("11. Salir")
         
         opcion = input("Seleccione una operación (1-10): ")
         
@@ -187,6 +328,9 @@ def menu():
             print("---------Fibonacci---------")
             aritmetica.fibonacci()
         elif opcion == "10":
+             print("---------Fracciones---------")
+             aritmetica.fracciones()
+        elif opcion == "11":
             print("Saliendo del programa...")
             break
         else:
