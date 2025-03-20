@@ -124,7 +124,7 @@ class Aritmetica:
         except ValueError:
             print("Error: Ingrese valores numéricos válidos.")
     #Melina Alcira Montaño Guzman
-    def fibonacci():
+    def fibonacci(self):
         while True:
             try:
                 n = int(input("Ingrese la cantidad de números de Fibonacci a calcular: "))
