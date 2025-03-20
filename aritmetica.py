@@ -296,6 +296,7 @@ def menu():
         print("6. Radicación")
         print("7. Módulo")
         print("8. Logaritmo")
+        print("9. Fibonacci")
         print("10. Fracciones")
         print("11. Salir")
         
